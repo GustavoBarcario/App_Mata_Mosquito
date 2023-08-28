@@ -1,4 +1,9 @@
-var altura = window.innerHeight;
-var largura = window.innerWidth;
+var altura = 0;
+var largura = 0;
 
-console.log(altura, largura);
+function ajustaTamanhoPalcoJogo() {
+  var altura = window.innerHeight;
+  var largura = window.innerWidth;
+  console.log(altura, largura);
+}
+ajustaTamanhoPalcoJogo();
