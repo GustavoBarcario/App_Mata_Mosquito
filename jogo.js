@@ -3,6 +3,19 @@ var largura = 0;
 var vidas = 1;
 var tempo = 15;
 
+var criaMosquitoTempo = 1500;
+
+var nivel = window.location.search;
+nivel = nivel.replace("?", "");
+
+if (nivel === "normal") {
+  criaMosquitoTempo = 1500;
+} else if (nivel === "dificil") {
+  criaMosquitoTempo = 1000;
+} else if (nivel === "impossivel") {
+  criaMosquitoTempo = 750;
+}
+
 function ajustaTamanhoPalcoJogo() {
   altura = window.innerHeight;
   largura = window.innerWidth;
@@ -90,5 +103,5 @@ function iniciarJogo() {
     alert("Selecione um nível para iniciar o jogo");
     return false;
   }
-  alert(nivel);
+  window.location.href = "app.html?" + nivel;
 }
